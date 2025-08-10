@@ -11,7 +11,7 @@ export const getTickets = async (req, res) => {
 };
 
 export const addTicket = async (req, res) => {
-    try {
+    try {  
         const ticketData = req.body;
         const newTicket = await ticketService.addTicket(ticketData);
         res.status(200).json(newTicket)
@@ -23,10 +23,10 @@ export const addTicket = async (req, res) => {
 
 export const updateTicketStatus = async (req, res) => {
     try {
-        const ticketData = req.body;
-        const id = req.params.id
+        const ticketData = req.body.status;
+        const ticket_no = req.params.ticket_no
 
-        const updateTicketStatus = await ticketService.updateTicketStatus(ticketData, id);
+        const updateTicketStatus = await ticketService.updateTicketStatus(ticketData, ticket_no);
 
         if (!updateTicketStatus) {
             return res.status(404).json({ message : "Data not found."})
@@ -42,9 +42,9 @@ export const updateTicketStatus = async (req, res) => {
 
 export const deleteTicket = async (req, res) => {
     try {
-        const id = req.params.id
+        const ticket_no = req.params.ticket_no
 
-        const deleteTicket = await ticketService.deleteTicket(id);
+        const deleteTicket = await ticketService.deleteTicket(ticket_no);
         
                 res.status(200).json(deleteTicket)
             
