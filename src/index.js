@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://service-portal-yffa.vercel.app'
+  'https://service-portal-delta.vercel.app'
 ];
 
 app.use(cors({
