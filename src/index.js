@@ -11,10 +11,10 @@ import usernamesRoutes  from './routes/usernamesRoute.js';
 import { verifyToken } from './middleware/authMiddleware.js';
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://service-portal-yffa.vercel.app'
+  'https://service-portal-delta.vercel.app'
 ];
 
 app.use(cors({

@@ -26,3 +26,15 @@ export const updateUser = async (first_name, last_name, role_id, location_id, us
                                 WHERE id = $5`, [first_name, last_name, role_id, location_id, userId]);
     return result;
 }
+
+export const deleteUser = async (id) => {
+    const { rowCount } = await query(`DELETE FROM users WHERE id = $1`, [id]);
+
+    return rowCount > 0;
+}
+
+export const userCount = async () => {
+    const result = await query(`SELECT COUNT(id) as user_count FROM users`);
+
+    return result;
+}

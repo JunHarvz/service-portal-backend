@@ -46,7 +46,7 @@ export const deleteTicket = async (req, res) => {
 
         const deleteTicket = await ticketService.deleteTicket(ticket_no);
         
-                res.status(200).json(deleteTicket)
+        res.status(200).json(deleteTicket)
             
     } catch (err) {
         console.error('Error deleting data:',err);
